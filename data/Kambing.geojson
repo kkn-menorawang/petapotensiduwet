@@ -1,0 +1,22 @@
+{
+"type": "FeatureCollection",
+"name": "Kambing",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Nama": "Ahmad", "Foto": "assets/images/Pak_Ahmad.jpeg", "Jumlah": 8, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Tidak" }, "geometry": { "type": "Point", "coordinates": [ 110.2639167, -7.694825 ] } },
+{ "type": "Feature", "properties": { "Nama": "Mujiman", "Foto": "assets/images/Pak_Mujiman.jpeg", "Jumlah": 7, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Ya", "ObatCacing": "Ya" }, "geometry": { "type": "Point", "coordinates": [ 110.2636472, -7.69458333 ] } },
+{ "type": "Feature", "properties": { "Nama": "Alip", "Foto": "assets/images/Pak_Alip.jpeg", "Jumlah": 11, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Ya" }, "geometry": { "type": "Point", "coordinates": [ 110.2635278, -7.69455278 ] } },
+{ "type": "Feature", "properties": { "Nama": "Warto", "Foto": "assets/images/Pak_Warto.jpeg", "Jumlah": 2, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Tidak" }, "geometry": { "type": "Point", "coordinates": [ 110.2626111, -7.69408611 ] } },
+{ "type": "Feature", "properties": { "Nama": "Wakiyo", "Foto": "assets/images/Pak_Wakiyo.jpeg", "Jumlah": 2, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Tidak" }, "geometry": { "type": "Point", "coordinates": [ 110.2625, -7.693925 ] } },
+{ "type": "Feature", "properties": { "Nama": "Ngatiman", "Foto": "assets/images/Pak_Ngatiman.jpeg", "Jumlah": 5, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Ya" }, "geometry": { "type": "Point", "coordinates": [ 110.2625333, -7.69405556 ] } },
+{ "type": "Feature", "properties": { "Nama": "Sariman", "Foto": "assets/images/Pak_Sariman.jpeg", "Jumlah": 6, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Ya" }, "geometry": { "type": "Point", "coordinates": [ 110.2629694, -7.69303889 ] } },
+{ "type": "Feature", "properties": { "Nama": "Marijo", "Foto": "assets/images/Pak_Marjio.jpeg", "Jumlah": 9, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Ya" }, "geometry": { "type": "Point", "coordinates": [ 110.2626417, -7.69286667 ] } },
+{ "type": "Feature", "properties": { "Nama": "Waliman", "Foto": "assets/images/Pak_Waliman.jpeg", "Jumlah": 8, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Ya" }, "geometry": { "type": "Point", "coordinates": [ 110.2620167, -7.69343611 ] } },
+{ "type": "Feature", "properties": { "Nama": "Karnijo", "Foto": "assets/images/Pak_Karnijo.jpeg", "Jumlah": 8, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Ya" }, "geometry": { "type": "Point", "coordinates": [ 110.262125, -7.69424722 ] } },
+{ "type": "Feature", "properties": { "Nama": "Supadi", "Foto": "assets/images/Pak_Supadi.jpeg", "Jumlah": 5, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Tidak" }, "geometry": { "type": "Point", "coordinates": [ 110.2617472, -7.69253889 ] } },
+{ "type": "Feature", "properties": { "Nama": "Sarijo", "Foto": "assets/images/Pak_Sarijo.jpeg", "Jumlah": 6, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Ya" }, "geometry": { "type": "Point", "coordinates": [ 110.2608806, -7.69369444 ] } },
+{ "type": "Feature", "properties": { "Nama": "Mukayat", "Foto": "assets/images/Pak_Mukayat.jpeg", "Jumlah": 6, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Ya" }, "geometry": { "type": "Point", "coordinates": [ 110.2605556, -7.69378889 ] } },
+{ "type": "Feature", "properties": { "Nama": "Wagimin", "Foto": "assets/images/Pak_Wagimin.jpeg", "Jumlah": 7, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Ya" }, "geometry": { "type": "Point", "coordinates": [ 110.2608028, -7.69297222 ] } },
+{ "type": "Feature", "properties": { "Nama": "Mariatun", "Foto": "assets/images/Bu_Maryatun.jpeg", "Jumlah": 1, "Sistem": "Kandang pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Ya" }, "geometry": { "type": "Point", "coordinates": [ 110.26095, -7.692625 ] } }
+]
+}

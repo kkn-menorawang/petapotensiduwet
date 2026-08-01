@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "Domba",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Nama": "Ngadino", "Jumlah": 3, "Sistem": "Kandang Pribadi", "Pakan": "Rumput", "Vaksin": "Tidak", "ObatCacing": "Tidak", "Foto": "assets/images/Pak_Ngadino.jpeg" }, "geometry": { "type": "Point", "coordinates": [ 110.2611139, -7.69221944 ] } },
+{ "type": "Feature", "properties": { "Nama": "Sariyo", "Jumlah": 8, "Sistem": "Kandang Pribadi", "Pakan": "Rumput", "Vaksin": "Ya", "ObatCacing": "Ya", "Foto": "assets/images/Pak_Sariyo.jpeg" }, "geometry": { "type": "Point", "coordinates": [ 110.2640667, -7.69445278 ] } }
+]
+}

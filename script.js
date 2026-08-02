@@ -47,27 +47,47 @@ const layerControl = L.control.layers(
 
 /* PANE*/
 
-map.createPane("batasDesa");
-map.getPane("batasDesa").style.zIndex = 300;
+map.createPane("BatasKabKota");
+map.getPane("BatasKabKota").style.zIndex = 300;
 
-map.createPane("batasPadukuhan");
-map.getPane("batasPadukuhan").style.zIndex = 301;
+map.createPane("BatasKecamatan");
+map.getPane("BatasKecamatan").style.zIndex = 301;
 
-map.createPane("sungai");
-map.getPane("sungai").style.zIndex = 302;
+map.createPane("BatasKelurahan");
+map.getPane("BatasKelurahan").style.zIndex = 302;
 
-map.createPane("jalan");
-map.getPane("jalan").style.zIndex = 303;
+map.createPane("BatasPadukuhan");
+map.getPane("BatasPadukuhan").style.zIndex = 303;
 
-map.createPane("fasilitas");
-map.getPane("fasilitas").style.zIndex = 304;
+map.createPane("AirTerjun");
+map.getPane("AirTerjun").style.zIndex = 304;
 
-map.createPane("potensi");
-map.getPane("potensi").style.zIndex = 305;
+map.createPane("Jembatan");
+map.getPane("Jembatan").style.zIndex = 305;
 
-map.createPane("landmark");
-map.getPane("landmark").style.zIndex = 306;
+map.createPane("CacingSutra");
+map.getPane("CacingSutra").style.zIndex = 306;
 
+map.createPane("Lele");
+map.getPane("Lele").style.zIndex = 307;
+
+map.createPane("Dukuh");
+map.getPane("Dukuh").style.zIndex = 308;
+
+map.createPane("Mushola");
+map.getPane("Mushola").style.zIndex = 309;
+
+map.createPane("Sekolah");
+map.getPane("Sekolah").style.zIndex = 310;
+
+map.createPane("UMKM");
+map.getPane("UMKM").style.zIndex = 311;
+
+map.createPane("Domba");
+map.getPane("Domba").style.zIndex = 312;
+
+map.createPane("Kambing");
+map.getPane("Kambing").style.zIndex = 313;
 
 /*LOAD GEOJSON*/
 

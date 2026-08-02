@@ -1,6 +1,4 @@
-/* ==========================================
-   INISIALISASI PETA
-========================================== */
+/* INISIALISASI PETA */
 
 const map = L.map('map', {
     zoomControl: true
@@ -10,9 +8,7 @@ const map = L.map('map', {
 map.setView([-7.6938, 110.2606], 15);
 
 
-/* ==========================================
-   BASEMAP
-========================================== */
+/* BASEMAP*/
 
 const osm = L.tileLayer(
     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -25,18 +21,14 @@ const osm = L.tileLayer(
 osm.addTo(map);
 
 
-/* ==========================================
-   SCALE BAR
-========================================== */
+/* SCALE BAR */
 
 L.control.scale({
     imperial:false
 }).addTo(map);
 
 
-/* ==========================================
-   LAYER CONTROL
-========================================== */
+/*  LAYER CONTROL*/
 
 const baseMaps = {
     "OpenStreetMap": osm
@@ -53,9 +45,7 @@ const layerControl = L.control.layers(
 ).addTo(map);
 
 
-/* ==========================================
-   PANE
-========================================== */
+/* PANE*/
 
 map.createPane("batasDesa");
 map.getPane("batasDesa").style.zIndex = 300;
@@ -79,9 +69,7 @@ map.createPane("landmark");
 map.getPane("landmark").style.zIndex = 306;
 
 
-/* ==========================================
-   LOAD GEOJSON
-========================================== */
+/*LOAD GEOJSON*/
 
 function loadGeoJSON(url, options, layerName){
 

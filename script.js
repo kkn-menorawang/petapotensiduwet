@@ -11,13 +11,25 @@ map.setView([-7.6938, 110.2606], 10);
 /* BASEMAP*/
 
 const osm = L.tileLayer(
-    'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 {
-    attribution:
-    '&copy; OpenStreetMap contributors',
-    maxZoom: 22
+    attribution:'© OpenStreetMap contributors',
+    maxZoom:22
 });
 
+const satellite = L.tileLayer(
+'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+{
+    attribution:'© Esri'
+});
+
+const carto = L.tileLayer(
+'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+{
+    attribution:'© CARTO'
+});
+
+// Basemap default
 osm.addTo(map);
 
 
@@ -88,6 +100,7 @@ map.getPane("Domba").style.zIndex = 312;
 
 map.createPane("Kambing");
 map.getPane("Kambing").style.zIndex = 313;
+
 
 /*LOAD GEOJSON*/
 

@@ -5,7 +5,7 @@ const map = L.map('map', {
 });
 
 // Koordinat Padukuhan Duwet II
-map.setView([-7.6938, 110.2606], 10);
+map.setView([-7.6938, 110.2606], 20);
 
 
 /* BASEMAP*/

@@ -1,188 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
+
 <head>
-  <title>Peta Zona Strategis Lokasi Cabang Baru Waroeng Steak & Shake di Bandung</title>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <style>
-    body, html { margin: 0; padding: 0; font-family: sans-serif; }
-    #map { height: 100vh; }
-    .legend {
-      background: white;
-      padding: 10px;
-      line-height: 1.4em;
-      font-size: 12px;
-      border: 1px solid #ccc;
-    }
-    .diamond-icon {
-      width: 12px;
-      height: 12px;
-      background: #10e901;
-      transform: rotate(45deg);
-      border: 1px solid black;
-      margin: auto;
-    }
-    #judul-peta {
-      position: absolute;
-      top: 10px;
-      width: 100%;
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-      background: rgba(255,255,255,0.85);
-      padding: 6px;
-      z-index: 1000;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
-    }
-    #footer {
-      position: absolute;
-      bottom: 5px;
-      right: 10px;
-      font-size: 10px;
-      background: rgba(255,255,255,0.5);
-      padding: 3px 6px;
-      border-radius: 4px;
-      z-index: 1000;
-    }
-  </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Peta Digital Potensi Padukuhan Duwet II</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
-<div id="judul-peta">
-  Peta Zona Strategis Lokasi Cabang Baru<br>Waroeng Steak & Shake di Kota Bandung
-</div>
-<div id="map"></div>
-<div id="footer">Noni Cantika Wiguna — 23/514566/SV/22383</div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script>
-const map = L.map('map').setView([-6.9, 107.6], 12);
+    <!-- Header -->
+    <header id="header">
 
-// Define custom panes with zIndex to manage stacking
-map.createPane('desaPane'); map.getPane('desaPane').style.zIndex = 300;
-map.createPane('pemukimanPane'); map.getPane('pemukimanPane').style.zIndex = 301;
-map.createPane('zonaPane'); map.getPane('zonaPane').style.zIndex = 302;
-map.createPane('batasPane'); map.getPane('batasPane').style.zIndex = 303;
-map.createPane('jalanPane'); map.getPane('jalanPane').style.zIndex = 304;
-map.createPane('kompetitorPane'); map.getPane('kompetitorPane').style.zIndex = 305;
-map.createPane('pelangganPane'); map.getPane('pelangganPane').style.zIndex = 306;
-map.createPane('wssPane'); map.getPane('wssPane').style.zIndex = 307;
+        <h1>Peta Digital Potensi Padukuhan Duwet II</h1>
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; OpenStreetMap contributors'
-}).addTo(map);
+        <p>
+            Kalurahan Banjarharjo • Kecamatan Kalibawang • Kabupaten Kulon Progo
+        </p>
 
-const wssIcon = L.icon({
-  iconUrl: 'https://raw.githubusercontent.com/nonicantika/WSS/main/WSS.png',
-  iconSize: [30, 30],
-  iconAnchor: [15, 30],
-  popupAnchor: [0, -30]
-});
+    </header>
 
-function makePopup(props, fields) {
-  let html = '<table>';
-  fields.forEach(f => {
-    html += `<tr><td><b>${f}</b></td><td>${props[f] || '-'}</td></tr>`;
-  });
-  html += '</table>';
-  return html;
-}
+    <!-- Map -->
+    <main>
 
-function loadLayer(url, options, name) {
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      const layer = L.geoJSON(data, options).addTo(map);
-      overlays[name] = layer;
-      layerControl.addOverlay(layer, name);
-    });
-}
+        <div id="map"></div>
 
-const overlays = {};
-const layerControl = L.control.layers(null, overlays).addTo(map);
-L.control.scale().addTo(map);
+    </main>
 
-// Layers
-loadLayer('Desa.geojson', {
-  pane: 'desaPane',
-  style: { fillColor: "#d32f7f", color: "#fff", weight: 0.3, fillOpacity: 0.5 },
-  onEachFeature: (f, l) => {
-    const namaKel = f.properties['NAMOBJ'] || '-';
-    const kec = f.properties['WADMKC'] || '-';
-    const kota = f.properties['WADMKK'] || '-';
-    const prov = f.properties['WADMPR'] || '-';
-    l.bindPopup(`<b>Kelurahan:</b> ${namaKel}<br><b>Kecamatan:</b> ${kec}<br><b>Kota:</b> ${kota}<br><b>Provinsi:</b> ${prov}`);
-  }
-}, "Wilayah Desa");
+    <!-- Footer -->
+    <footer id="footer">
 
-loadLayer('Pemukiman.geojson', {
-  pane: 'pemukimanPane',
-  style: { fillColor: '#86b65b', color: '#444', weight: 0.3, fillOpacity: 0.5 }
-}, "Lahan Permukiman");
+        © 2026 KKN-PPM UGM Unit Menoreh Kalibawang
 
-loadLayer('Zona_Strategis.geojson', {
-  pane: 'zonaPane',
-  style: { fillColor: '#dada12', color: '#444', weight: 1.2, opacity: 1, fillOpacity: 0.5 },
-  onEachFeature: (f, l) => {
-    const namaKel = f.properties['NAMOBJ'] || '-';
-    const kec = f.properties['WADMKC'] || '-';
-    const kota = f.properties['WADMKK'] || '-';
-    const prov = f.properties['WADMPR'] || '-';
-    l.bindPopup(`<b>Kelurahan:</b> ${namaKel}<br><b>Kecamatan:</b> ${kec}<br><b>Kota:</b> ${kota}<br><b>Provinsi:</b> ${prov}`);
-  }
-}, "Zona Strategis");
+    </footer>
 
-loadLayer('Batas_Desa.geojson', {
-  pane: 'batasPane',
-  style: { color: '#000', weight: 1.2, dashArray: '4' }
-}, "Batas Desa");
 
-loadLayer('Jalan_Utama.geojson', {
-  pane: 'jalanPane',
-  style: { color: '#6900da', weight: 2.5 }
-}, "Jalan Utama");
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-loadLayer('Pelanggan.geojson', {
-  pane: 'pelangganPane',
-  pointToLayer: (f, latlng) => L.marker(latlng, {
-    icon: L.divIcon({ html: '<div class="diamond-icon"></div>', className: '', iconSize: [6, 6] })
-  }),
-  onEachFeature: (f, l) => l.bindPopup(makePopup(f.properties, ['Nama', 'Alamat', 'Kelurahan', 'Kecamatan', 'Latitude', 'Longitude']))
-}, "Pelanggan");
+    <!-- Script -->
+    <script src="script.js"></script>
 
-loadLayer('Kompetitor.geojson', {
-  pane: 'kompetitorPane',
-  pointToLayer: (f, latlng) => L.circleMarker(latlng, {
-    radius: 6, fillColor: '#0fc9aa', color: 'black', weight: 1, fillOpacity: 0.8
-  }),
-  onEachFeature: (f, l) => l.bindPopup(makePopup(f.properties, ['Kompetitor', 'Alamat', 'Kelurahan', 'Kecamatan', 'Lintang', 'Bujur']))
-}, "Kompetitor");
-
-loadLayer('WSS.geojson', {
-  pane: 'wssPane',
-  pointToLayer: (f, latlng) => L.marker(latlng, { icon: wssIcon }),
-  onEachFeature: (f, l) => l.bindPopup(makePopup(f.properties, ['Cabang', 'Alamat', 'Kelurahan', 'Kecamatan', 'Lintang', 'Bujur']))
-}, "Waroeng Steak & Shake");
-
-// Legend
-const legend = L.control({position: 'bottomright'});
-legend.onAdd = function () {
-  const div = L.DomUtil.create('div', 'legend');
-  div.innerHTML = `
-    <b>Legenda</b><br>
-    <img src="https://raw.githubusercontent.com/nonicantika/WSS/main/WSS.png" width="20"> Waroeng Steak & Shake<br>
-    <div style="width:11px; height:11px; background:#0fc9aa; border-radius:50%; border: 0.5px solid black; display:inline-block; margin-right:4px;"></div> Kompetitor<br>
-    <div style="width:8px; height:8px; background:#10e901; transform: rotate(45deg); border: 0.5px solid black; display:inline-block; margin-right:4px;"></div> Pelanggan<br>
-    <div style="width:20px; height:2px; background:#6900da; display:inline-block; vertical-align:middle; margin-right:4px;"></div> Jalan Utama<br>
-    <div style="width:12px; height:12px; background:#dada12; display:inline-block; margin-right:4px;"></div> Zona Strategis<br>
-    <div style="width:12px; height:12px; background:#86b65b; display:inline-block; margin-right:4px;"></div> Lahan Permukiman<br>
-    <div style="width:20px; height:2px; border-bottom: 2px dashed black; display:inline-block; margin-right:4px; vertical-align:middle;"></div> Batas Desa<br>
-    <div style="width:12px; height:12px; background:#d32f7f; display:inline-block; margin-right:4px;"></div> Wilayah Desa
-  `;
-  return div;
-};
-legend.addTo(map);
-</script>
 </body>
-</html>
 
+</html>

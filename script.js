@@ -168,6 +168,20 @@ function createPopup(feature, title, fields){
         `;
 
     }
+
+    if(feature.properties.GoogleMaps){
+
+    html += `
+        <a href="${feature.properties.GoogleMaps}"
+           target="_blank"
+           class="popup-button">
+
+           📍 Buka di Google Maps
+
+        </a>
+    `;
+
+   }
     
     html += `<h3>${title}</h3>`;
 

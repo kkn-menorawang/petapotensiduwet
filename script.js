@@ -648,11 +648,11 @@ loadLayer(
       }
 
     },
-    "Cacing Sutra",
+    "Budidaya Cacing Sutra",
     
     clusterPotensi,
 
-    Budidaya Cacing Sutra
+    "Potensi"
 
 );
 
@@ -689,8 +689,11 @@ loadLayer(
       }
 
     },
-    "Lele",
-    clusterPotensi
+    "Budidaya Lele",
+    
+    clusterPotensi,
+
+    "Potensi"
 
 );
 
@@ -730,6 +733,7 @@ loadLayer(
     },
 
     "Dukuh",
+    
     clusterFasilitas
 
 );
@@ -768,7 +772,10 @@ loadLayer(
     },
 
     "Mushola",
-    clusterFasilitas
+    
+    clusterFasilitas,
+
+    "Fasilitas"
 
 );
 
@@ -808,7 +815,10 @@ loadLayer(
 
 
     "Sekolah",
-    clusterFasilitas
+    
+    clusterFasilitas,
+
+    "Fasilitas"
 
 );
 
@@ -850,7 +860,10 @@ loadLayer(
     },
 
     "UMKM",
-    clusterPotensi
+    
+    clusterPotensi,
+
+    "Potensi"
 
 );
 
@@ -893,7 +906,10 @@ loadLayer(
 
     },
     "Domba",
-    clusterPotensi
+    
+    clusterPotensi,
+
+    "Potensi"
 
 );
 
@@ -936,7 +952,10 @@ loadLayer(
 
     },
     "Kambing",
-    clusterPotensi
+    
+    clusterPotensi,
+
+    "Potensi"
 
 );
 

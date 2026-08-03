@@ -369,7 +369,8 @@ body{
 .legend{
 
     background:white;
-    padding:14px;
+
+    padding:10px;
 
     border-radius:10px;
 
@@ -377,23 +378,31 @@ body{
 
     font-size:13px;
 
-    line-height:1.6;
+    width:220px;
 
-    max-width:230px;
+    cursor:pointer;
 
 }
 
-.legend h4{
+.legend-title{
 
-    margin-bottom:10px;
+    font-weight:bold;
 
     color:#1b5e20;
 
+    font-size:15px;
+
 }
 
-.legend-group{
+.legend-content{
 
-    margin-bottom:8px;
+    margin-top:10px;
+
+}
+
+.legend.collapsed .legend-content{
+
+    display:none;
 
 }
 
@@ -403,9 +412,9 @@ body{
 
     height:18px;
 
-    margin-right:8px;
-
     vertical-align:middle;
+
+    margin-right:8px;
 
 }
 

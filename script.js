@@ -242,7 +242,29 @@ loadLayer(
            opacity:0.8,
            dashArray:"8 6",
            fillOpacity:0
-        }
+        },
+
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "Batas Kabupaten / Kota",
+
+                  [
+                    {name:"NAMOBJ",label:"Kelurahan"},
+                    {name:"WADMKC",label:"Kecamatan"},
+                    {name:"WADMKK",label:"Kabupaten/kota"},
+                    {name:"WADMPR",label:"Provinsi"}
+                 ] 
+
+           ));
+
+      }
+
     },
     "Batas Kab Kota"
 );
@@ -258,7 +280,29 @@ loadLayer(
            opacity:0.9,
            dashArray:"6 4",
            fillOpacity:0
-        }
+        },
+
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "Batas Kecamatan",
+
+                  [
+                    {name:"NAMOBJ",label:"Kelurahan"},
+                    {name:"WADMKC",label:"Kecamatan"},
+                    {name:"WADMKK",label:"Kabupaten/kota"},
+                    {name:"WADMPR",label:"Provinsi"}
+                 ] 
+
+           ));
+
+      }
+
     },
     "Batas Kecamatan"
 );
@@ -274,7 +318,29 @@ loadLayer(
            opacity:1,
            dashArray:"4 4",
            fillOpacity:0
-        }
+        },
+
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "Batas Kecamatan",
+
+                  [
+                    {name:"NAMOBJ",label:"Kelurahan"},
+                    {name:"WADMKC",label:"Kecamatan"},
+                    {name:"WADMKK",label:"Kabupaten/kota"},
+                    {name:"WADMPR",label:"Provinsi"}
+                 ] 
+
+           ));
+
+      }
+
     },
     "Batas Kelurahan"
 );
@@ -290,7 +356,30 @@ loadLayer(
            opacity:1,
            dashArray:"4 4",
            fillOpacity:0
-        }
+        },
+
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "Batas Kecamatan",
+
+                  [
+                    {name:"NAMOBJ",label:"Padukuhan"},
+                    {name:"WADMKD",label:"Kelurahan"},
+                    {name:"WADMKC",label:"Kecamatan"},
+                    {name:"WADMKK",label:"Kabupaten/kota"},
+                    {name:"WADMPR",label:"Provinsi"}
+                 ] 
+
+           ));
+
+      }
+
     },
     "Batas Padukuhan"
 );
@@ -502,7 +591,7 @@ loadLayer(
                   [
                     {name:"Nama",label:"Nama"},
                     {name:"Jumlah",label:"Jumlah Ternak"},
-                    {name:"Sistem",label:"Siatem"},
+                    {name:"Sistem",label:"Sistem"},
                     {name:"Pakan",label:"Pakan"},
                     {name:"Vaksin",label:"Vaksin"},
                     {name:"ObatCacing",label:"Obat Cacing"}

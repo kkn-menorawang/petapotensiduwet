@@ -43,14 +43,18 @@ const baseMaps = {
     "OpenStreetMap": osm
 };
 
-const overlayMaps = {};
+const groupedOverlays = {};
 
-const layerControl = L.control.layers(
+const layerControl = L.control.groupedLayers(
+
     baseMaps,
-    overlayMaps,
+
+    groupedOverlays,
+
     {
-        collapsed:false
+        collapsed:true
     }
+
 ).addTo(map);
 
 
@@ -119,6 +123,7 @@ legend.onAdd = function (map) {
 };
 
 legend.addTo(map);
+
 
 /* MARKER CLUSTER */
 
@@ -310,7 +315,7 @@ function createPopup(feature, title, fields){
 
 /*LOAD GEOJSON*/
 
-function loadLayer(url, options, layerName, cluster = null) {
+function loadLayer(url, options, layerName, cluster = null,  groupName = "Lainnya") {
 
     fetch(url)
         .then(response => {
@@ -388,7 +393,12 @@ loadLayer(
       }
 
     },
-    "Batas Kab Kota"
+    "Batas Kab Kota",
+    
+    null,
+
+    "Batas Administrasi"
+
 );
 
 loadLayer(
@@ -426,7 +436,12 @@ loadLayer(
       }
 
     },
-    "Batas Kecamatan"
+    "Batas Kecamatan",
+    
+    null,
+
+    "Batas Administrasi"
+
 );
 
 loadLayer(
@@ -464,7 +479,12 @@ loadLayer(
       }
 
     },
-    "Batas Kelurahan"
+    "Batas Kelurahan",
+    
+    null,
+
+    "Batas Administrasi"
+
 );
 
 loadLayer(
@@ -503,7 +523,12 @@ loadLayer(
       }
 
     },
-    "Batas Padukuhan"
+    "Batas Padukuhan",
+    
+    null,
+
+    "Batas Administrasi"
+
 );
 
 loadLayer(
@@ -541,7 +566,10 @@ loadLayer(
 
     },
     "Air Terjun",  
-    clusterLandmark
+    
+    clusterLandmark,
+
+    "Landmark"
 
 );
 
@@ -579,8 +607,11 @@ loadLayer(
       }
 
     },
-    "Jembatan",
-    clusterLandmark
+    "Jembatan"
+    
+    clusterLandmark,
+
+    "Landmark"
 
 );
 
@@ -618,7 +649,10 @@ loadLayer(
 
     },
     "Cacing Sutra",
-    clusterPotensi
+    
+    clusterPotensi,
+
+    Budidaya Cacing Sutra
 
 );
 

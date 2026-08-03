@@ -607,7 +607,7 @@ loadLayer(
       }
 
     },
-    "Jembatan"
+    "Jembatan",
     
     clusterLandmark,
 

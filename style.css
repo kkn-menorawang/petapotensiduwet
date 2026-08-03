@@ -328,7 +328,13 @@ body{
 
 .popup-button{
 
-    display:block;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
 
     width:100%;
 
@@ -338,9 +344,7 @@ body{
 
     background:#2E7D32;
 
-    color:white;
-
-    text-align:center;
+    color:#fff !important;
 
     text-decoration:none;
 
@@ -348,7 +352,7 @@ body{
 
     font-weight:600;
 
-    transition:.2s;
+    transition:.25s;
 
 }
 
@@ -356,34 +360,6 @@ body{
 
     background:#1B5E20;
 
-}
-
-.popup-button{
-
-display:block;
-
-margin-top:12px;
-
-padding:10px;
-
-background:#2E7D32;
-
-color:white;
-
-text-align:center;
-
-text-decoration:none;
-
-border-radius:8px;
-
-font-weight:600;
-
-transition:.25s;
-
-}
-
-.popup-button:hover{
-
-background:#1B5E20;
+    transform:translateY(-1px);
 
 }

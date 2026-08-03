@@ -302,13 +302,13 @@ body{
 
 .popup-table th{
 
-    width:38%;
+    width:45%;
 
     text-align:left;
 
     vertical-align:top;
 
-    padding:6px 4px;
+    padding:6px 8px 6px 4px;
 
     color:#2e7d32;
 
@@ -318,7 +318,7 @@ body{
 
 .popup-table td{
 
-    padding:6px 4px;
+    padding:6px 4px 6px 12px;
 
     color:#444;
 

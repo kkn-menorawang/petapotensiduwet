@@ -71,80 +71,386 @@ map.getPane("BatasKelurahan").style.zIndex = 302;
 map.createPane("BatasPadukuhan");
 map.getPane("BatasPadukuhan").style.zIndex = 303;
 
-map.createPane("AirTerjun");
-map.getPane("AirTerjun").style.zIndex = 304;
+map.createPane("Potensi");
+map.getPane("Potensi").style.zIndex = 304;
 
-map.createPane("Jembatan");
-map.getPane("Jembatan").style.zIndex = 305;
+map.createPane("Fasilitas");
+map.getPane("Fasilitas").style.zIndex = 305;
 
-map.createPane("CacingSutra");
-map.getPane("CacingSutra").style.zIndex = 306;
+map.createPane("Landmark");
+map.getPane("Landmark").style.zIndex = 306;
 
-map.createPane("Lele");
-map.getPane("Lele").style.zIndex = 307;
 
-map.createPane("Dukuh");
-map.getPane("Dukuh").style.zIndex = 308;
+/*  ICON */
 
-map.createPane("Mushola");
-map.getPane("Mushola").style.zIndex = 309;
+const KambingIcon = L.icon({
+    iconUrl: "assets/icons/Kambing.png",
+    iconSize: [32,32],
+    iconAnchor: [16,32],
+    popupAnchor: [0,-30]
+});
 
-map.createPane("Sekolah");
-map.getPane("Sekolah").style.zIndex = 310;
+const DombaIcon = L.icon({
+    iconUrl: "assets/icons/Domba.png",
+    iconSize: [32,32],
+    iconAnchor: [16,32],
+    popupAnchor: [0,-30]
+});
 
-map.createPane("UMKM");
-map.getPane("UMKM").style.zIndex = 311;
+const LeleIcon = L.icon({
+    iconUrl: "assets/icons/Lele.png",
+    iconSize: [32,32],
+    iconAnchor: [16,32],
+    popupAnchor: [0,-30]
+});
 
-map.createPane("Domba");
-map.getPane("Domba").style.zIndex = 312;
+const CacingSutraIcon = L.icon({
+    iconUrl: "assets/icons/Cacing_Sutra.png",
+    iconSize: [32,32],
+    iconAnchor: [16,32],
+    popupAnchor: [0,-30]
+});
 
-map.createPane("Kambing");
-map.getPane("Kambing").style.zIndex = 313;
+const UMKMIcon = L.icon({
+    iconUrl: "assets/icons/UMKM.png",
+    iconSize: [30,30],
+    iconAnchor: [15,30],
+    popupAnchor: [0,-28]
+});
 
+const AirTerjunIcon = L.icon({
+    iconUrl: "assets/icons/Air_Terjun.png",
+    iconSize: [30,30],
+    iconAnchor: [15,30],
+    popupAnchor: [0,-28]
+});
+
+const JembatanIcon = L.icon({
+    iconUrl: "assets/icons/Jembatan.png",
+    iconSize: [30,30],
+    iconAnchor: [15,30],
+    popupAnchor: [0,-28]
+});
+
+const DukuhIcon = L.icon({
+    iconUrl: "assets/icons/Dukuh.png",
+    iconSize: [30,30],
+    iconAnchor: [15,30],
+    popupAnchor: [0,-28]
+});
+
+const MusholaIcon = L.icon({
+    iconUrl: "assets/icons/Mushola.png",
+    iconSize: [30,30],
+    iconAnchor: [15,30],
+    popupAnchor: [0,-28]
+});
+
+const SekolahIcon = L.icon({
+    iconUrl: "assets/icons/Sekolah.png",
+    iconSize: [30,30],
+    iconAnchor: [15,30],
+    popupAnchor: [0,-28]
+});
 
 /*LOAD GEOJSON*/
 
-function loadGeoJSON(url, options, layerName){
+function loadLayer(url, options, layerName) {
 
     fetch(url)
+        .then(response => {
 
-    .then(response => response.json())
+            if (!response.ok) {
+                throw new Error(`Gagal memuat ${url}`);
+            }
 
-    .then(data => {
+            return response.json();
 
-        const layer = L.geoJSON(data, options);
+        })
 
-        layer.addTo(map);
+        .then(data => {
 
-        overlayMaps[layerName] = layer;
+            const layer = L.geoJSON(data, options);
 
-        layerControl.addOverlay(layer, layerName);
+            layer.addTo(map);
 
-    })
+            overlayMaps[layerName] = layer;
 
-    .catch(error => {
+            layerControl.addOverlay(layer, layerName);
 
-        console.error("Gagal memuat :", url);
+        })
 
-    });
+        .catch(error => {
+
+            console.error(error);
+
+        });
 
 }
 
+loadLayer(
+    "data/Batas_KabKota.geojson",
+    {
+        pane: "BatasKabKota",
 
-loadGeoJSON(
-"data/jalan.geojson",
-{
-    pane:"jalan",
-
-    style:{
-        color:"#555",
-        weight:2
-    }
-
-},
-"Jalan"
+        style: {
+           color:"#616161",
+           weight:1,
+           opacity:0.8,
+           dashArray:"8 6",
+           fillOpacity:0
+        }
+    },
+    "Batas Kab Kota"
 );
 
+loadLayer(
+    "data/Batas_kecamatan.geojson",
+    {
+        pane: "BatasKecamatan",
+
+        style: {
+           color:"#757575",
+           weight:1.5,
+           opacity:0.9,
+           dashArray:"6 4",
+           fillOpacity:0
+        }
+    },
+    "Batas Kecamatan"
+);
+
+loadLayer(
+    "data/Batas_Kelurahan.geojson",
+    {
+        pane: "BatasKelurahan",
+
+        style: {
+           color:"#FB8C00",
+           weight:2,
+           opacity:1,
+           dashArray:"4 4",
+           fillOpacity:0
+        }
+    },
+    "Batas Kelurahan"
+);
+
+loadLayer(
+    "data/Batas_Padukuhan.geojson",
+    {
+        pane: "BatasPadukuhan",
+
+        style: {
+           color:"#FB8C00",
+           weight:2,
+           opacity:1,
+           dashArray:"4 4",
+           fillOpacity:0
+        }
+    },
+    "Batas Padukuhan"
+);
+
+loadLayer(
+    "data/Air_Terjun.geojson",
+    {
+
+        pane:"Landmark",
+
+        pointToLayer:function(feature, latlng){
+
+            return L.marker(latlng,{
+                icon:AirTerjunIcon
+            });
+
+        }
+
+    },
+
+    "Air Terjun"
+
+);
+
+loadLayer(
+    "data/Jembatan.geojson",
+    {
+
+        pane:"Landmark",
+
+        pointToLayer:function(feature, latlng){
+
+            return L.marker(latlng,{
+                icon:JembatanIcon
+            });
+
+        }
+
+    },
+
+    "Jembatan"
+
+);
+
+loadLayer(
+    "data/Cacing_Sutra.geojson",
+    {
+
+        pane:"Potensi",
+
+        pointToLayer:function(feature, latlng){
+
+            return L.marker(latlng,{
+                icon:CacingSutraIcon
+            });
+
+        }
+
+    },
+
+    "Cacing Sutra"
+
+);
+
+loadLayer(
+    "data/Lele.geojson",
+    {
+
+        pane:"Potensi",
+
+        pointToLayer:function(feature, latlng){
+
+            return L.marker(latlng,{
+                icon:LeleIcon
+            });
+
+        }
+
+    },
+
+    "Lele"
+
+);
+
+loadLayer(
+    "data/Dukuh.geojson",
+    {
+
+        pane:"Fasilitas",
+
+        pointToLayer:function(feature, latlng){
+
+            return L.marker(latlng,{
+                icon:DukuhIcon
+            });
+
+        }
+
+    },
+
+    "Dukuh"
+
+);
+
+loadLayer(
+    "data/Mushola.geojson",
+    {
+
+        pane:"Fasilitas",
+
+        pointToLayer:function(feature, latlng){
+
+            return L.marker(latlng,{
+                icon:MusholaIcon
+            });
+
+        }
+
+    },
+
+    "Mushola"
+
+);
+
+loadLayer(
+    "data/Sekolah.geojson",
+    {
+
+        pane:"Fasilitas",
+
+        pointToLayer:function(feature, latlng){
+
+            return L.marker(latlng,{
+                icon:SekolahIcon
+            });
+
+        }
+
+    },
+
+    "Sekolah"
+
+);
+
+loadLayer(
+    "data/UMKM.geojson",
+    {
+
+        pane:"Potensi",
+
+        pointToLayer:function(feature, latlng){
+
+            return L.marker(latlng,{
+                icon:UMKMIcon
+            });
+
+        }
+
+    },
+
+    "UMKM"
+
+);
+
+loadLayer(
+    "data/Domba.geojson",
+    {
+
+        pane:"Potensi",
+
+        pointToLayer:function(feature, latlng){
+
+            return L.marker(latlng,{
+                icon:DombaIcon
+            });
+
+        }
+
+    },
+
+    "Domba"
+
+);
+
+loadLayer(
+    "data/Kambing.geojson",
+    {
+
+        pane:"Potensi",
+
+        pointToLayer:function(feature, latlng){
+
+            return L.marker(latlng,{
+                icon:KambingIcon
+            });
+
+        }
+
+    },
+
+    "Kambing"
+
+);
 
 
 fetch("data/batas_padukuhan.geojson")

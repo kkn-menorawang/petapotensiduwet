@@ -158,6 +158,7 @@ function createPopup(feature, title, fields){
 
     let html = `<div class="popup-content">`;
 
+    // FOTO
     if(p.Foto){
 
         html += `
@@ -169,22 +170,10 @@ function createPopup(feature, title, fields){
 
     }
 
-    if(feature.properties.GoogleMaps){
-
-    html += `
-        <a href="${feature.properties.GoogleMaps}"
-           target="_blank"
-           class="popup-button">
-
-           📍 Buka di Google Maps
-
-        </a>
-    `;
-
-   }
-    
+    // JUDUL
     html += `<h3>${title}</h3>`;
 
+    // TABEL
     html += `<table class="popup-table">`;
 
     fields.forEach(field=>{
@@ -199,6 +188,21 @@ function createPopup(feature, title, fields){
     });
 
     html += `</table>`;
+
+    // TOMBOL GOOGLE MAPS
+    if(p.GoogleMaps){
+
+        html += `
+        <a href="${p.GoogleMaps}"
+           target="_blank"
+           class="popup-button">
+
+           📍 Buka di Google Maps
+
+        </a>
+        `;
+
+    }
 
     html += `</div>`;
 

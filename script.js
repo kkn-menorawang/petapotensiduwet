@@ -517,11 +517,11 @@ loadLayer(
   
                   feature,
 
-                  "Air Terjun",
+                  "Lele",
 
                   [
                     {name:"Nama",label:"Nama"},
-                    {name:"Deskripsi",label:"Deskripsi"}
+                    {name:"GoogleMaps",label:"Google Maps"}
                  ] 
 
            ));
@@ -674,7 +674,7 @@ loadLayer(
                   "UMKM",
 
                   [
-                    {name:"Nama",label:"Nama"},
+                    {name:"Name",label:"Nama"},
                     {name:"Jenis",label:"Jenis"},
                     {name:"Produk",label:"Produk"},
                     {name:"Deskripsi",label:"Deskripsi"},

@@ -396,10 +396,28 @@ loadLayer(
                 icon:AirTerjunIcon
             });
 
-        }
+        },
+    
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "Air Terjun",
+
+                  [
+                    {name:"Nama",label:"Nama"},
+                    {name:"Deskripsi",label:"Deskripsi"}
+                 ] 
+
+           ));
+
+      }
 
     },
-
     "Air Terjun"
 
 );

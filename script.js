@@ -4,9 +4,6 @@ const map = L.map('map', {
     zoomControl: true
 });
 
-// Koordinat Padukuhan Duwet II
-map.setView([-7.6938, 110.2606], 18);
-
 
 /* BASEMAP*/
 
@@ -133,7 +130,7 @@ const JembatanIcon = L.icon({
 });
 
 const DukuhIcon = L.icon({
-    iconUrl: "assets/icons/Dukuh.png",
+    iconUrl: "assets/icons/Padukuhan.png",
     iconSize: [30,30],
     iconAnchor: [15,30],
     popupAnchor: [0,-28]
@@ -174,7 +171,7 @@ function createPopup(feature, title, fields){
     
     html += `<h3>${title}</h3>`;
 
-    html += `<table>`;
+    html += `<table class="popup-table">`;
 
     fields.forEach(field=>{
 
@@ -328,7 +325,7 @@ loadLayer(
   
                   feature,
 
-                  "Batas Kecamatan",
+                  "Batas Kelurahan",
 
                   [
                     {name:"NAMOBJ",label:"Kelurahan"},
@@ -366,7 +363,7 @@ loadLayer(
   
                   feature,
 
-                  "Batas Kecamatan",
+                  "Batas Padukuhan",
 
                   [
                     {name:"NAMOBJ",label:"Padukuhan"},
@@ -561,7 +558,7 @@ loadLayer(
                   "Rumah Kepala Dukuh",
 
                   [
-                    {name:"Nama ",label:"Nama"},
+                    {name:"Nama",label:"Nama"},
                     {name:"Jabatan",label:"Jabatan"}
                  ] 
 
@@ -600,7 +597,7 @@ loadLayer(
                   "Mushola",
 
                   [
-                    {name:"Nama ",label:"Nama"}                 ] 
+                    {name:"Nama",label:"Nama"}                 ] 
 
            ));
 
@@ -637,7 +634,7 @@ loadLayer(
                   "Sekolah",
 
                   [
-                    {name:"Nama ",label:"Nama"},
+                    {name:"Nama",label:"Nama"},
                     {name:"GoogleMaps",label:"Google Maps"}
                  ] 
 
@@ -677,7 +674,7 @@ loadLayer(
                   "UMKM",
 
                   [
-                    {name:"Nama ",label:"Nama"},
+                    {name:"Nama",label:"Nama"},
                     {name:"Jenis",label:"Jenis"},
                     {name:"Produk",label:"Produk"},
                     {name:"Deskripsi",label:"Deskripsi"},
@@ -785,6 +782,11 @@ fetch("data/Batas_Padukuhan.geojson")
 
     const batas = L.geoJSON(data);
 
-    map.fitBounds(batas.getBounds());
+    map.fitBounds(
+        batas.getBounds(),
+        {
+            padding:[30,30]
+        }
+    );
 
 });

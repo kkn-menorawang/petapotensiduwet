@@ -54,6 +54,39 @@ const layerControl = L.control.layers(
 ).addTo(map);
 
 
+/* ==========================================
+   MARKER CLUSTER
+========================================== */
+
+const clusterPotensi = L.markerClusterGroup({
+
+    showCoverageOnHover:false,
+    spiderfyOnMaxZoom:true,
+    disableClusteringAtZoom:17
+
+});
+
+const clusterFasilitas = L.markerClusterGroup({
+
+    showCoverageOnHover:false,
+    spiderfyOnMaxZoom:true,
+    disableClusteringAtZoom:17
+
+});
+
+const clusterLandmark = L.markerClusterGroup({
+
+    showCoverageOnHover:false,
+    spiderfyOnMaxZoom:true,
+    disableClusteringAtZoom:17
+
+});
+
+map.addLayer(clusterPotensi);
+map.addLayer(clusterFasilitas);
+map.addLayer(clusterLandmark);
+
+
 /* PANE*/
 
 map.createPane("BatasKabKota");
@@ -213,7 +246,7 @@ function createPopup(feature, title, fields){
 
 /*LOAD GEOJSON*/
 
-function loadLayer(url, options, layerName) {
+function loadLayer(url, options, layerName, cluster = null) {
 
     fetch(url)
         .then(response => {
@@ -230,7 +263,16 @@ function loadLayer(url, options, layerName) {
 
             const layer = L.geoJSON(data, options);
 
-            layer.addTo(map);
+            // Jika memakai cluster
+            if(cluster){
+
+                cluster.addLayer(layer);
+
+            }else{
+
+                layer.addTo(map);
+
+            }
 
             overlayMaps[layerName] = layer;
 
@@ -243,6 +285,8 @@ function loadLayer(url, options, layerName) {
             console.error(error);
 
         });
+
+}
 
 }
 
@@ -433,7 +477,8 @@ loadLayer(
       }
 
     },
-    "Air Terjun"
+    "Air Terjun",  
+    clusterLandmark
 
 );
 
@@ -471,7 +516,8 @@ loadLayer(
       }
 
     },
-    "Jembatan"
+    "Jembatan",
+    clusterLandmark
 
 );
 
@@ -500,8 +546,7 @@ loadLayer(
                   "Cacing Sutra",
 
                   [
-                    {name:"Nama",label:"Nama"},
-                    {name:"GoogleMaps",label:"Google Maps"}
+                    {name:"Nama",label:"Nama"}
                  ] 
 
            ));
@@ -509,7 +554,8 @@ loadLayer(
       }
 
     },
-    "Cacing Sutra"
+    "Cacing Sutra",
+    clusterPotensi
 
 );
 
@@ -538,8 +584,7 @@ loadLayer(
                   "Lele",
 
                   [
-                    {name:"Nama",label:"Nama"},
-                    {name:"GoogleMaps",label:"Google Maps"}
+                    {name:"Nama",label:"Nama"}
                  ] 
 
            ));
@@ -547,7 +592,8 @@ loadLayer(
       }
 
     },
-    "Lele"
+    "Lele",
+    clusterPotensi
 
 );
 
@@ -586,7 +632,8 @@ loadLayer(
 
     },
 
-    "Dukuh"
+    "Dukuh",
+    clusterFasilitas
 
 );
 
@@ -623,7 +670,8 @@ loadLayer(
 
     },
 
-    "Mushola"
+    "Mushola",
+    clusterFasilitas
 
 );
 
@@ -652,8 +700,7 @@ loadLayer(
                   "Sekolah",
 
                   [
-                    {name:"Nama",label:"Nama"},
-                    {name:"GoogleMaps",label:"Google Maps"}
+                    {name:"Nama",label:"Nama"}
                  ] 
 
            ));
@@ -663,7 +710,8 @@ loadLayer(
     },
 
 
-    "Sekolah"
+    "Sekolah",
+    clusterFasilitas
 
 );
 
@@ -695,8 +743,7 @@ loadLayer(
                     {name:"Name",label:"Nama"},
                     {name:"Jenis",label:"Jenis"},
                     {name:"Produk",label:"Produk"},
-                    {name:"Deskripsi",label:"Deskripsi"},
-                    {name:"GoogleMaps",label:"Google Maps"}
+                    {name:"Deskripsi",label:"Deskripsi"}
                  ] 
 
            ));
@@ -705,7 +752,8 @@ loadLayer(
 
     },
 
-    "UMKM"
+    "UMKM",
+    clusterPotensi
 
 );
 
@@ -747,7 +795,8 @@ loadLayer(
       }
 
     },
-    "Domba"
+    "Domba",
+    clusterPotensi
 
 );
 

@@ -434,10 +434,28 @@ loadLayer(
                 icon:JembatanIcon
             });
 
-        }
+        },
+    
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "Jembatan",
+
+                  [
+                    {name:"Nama",label:"Nama"},
+                    {name:"Deskripsi",label:"Deskripsi"}
+                 ] 
+
+           ));
+
+      }
 
     },
-
     "Jembatan"
 
 );
@@ -454,10 +472,28 @@ loadLayer(
                 icon:CacingSutraIcon
             });
 
-        }
+        },
+    
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "Cacing Sutra",
+
+                  [
+                    {name:"Nama",label:"Nama"},
+                    {name:"GoogleMaps",label:"Google Maps"}
+                 ] 
+
+           ));
+
+      }
 
     },
-
     "Cacing Sutra"
 
 );
@@ -474,10 +510,28 @@ loadLayer(
                 icon:LeleIcon
             });
 
-        }
+        },
+    
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "Air Terjun",
+
+                  [
+                    {name:"Nama",label:"Nama"},
+                    {name:"Deskripsi",label:"Deskripsi"}
+                 ] 
+
+           ));
+
+      }
 
     },
-
     "Lele"
 
 );
@@ -494,7 +548,26 @@ loadLayer(
                 icon:DukuhIcon
             });
 
-        }
+        },
+    
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "Rumah Kepala Dukuh",
+
+                  [
+                    {name:"Nama ",label:"Nama"},
+                    {name:"Jabatan",label:"Jabatan"}
+                 ] 
+
+           ));
+
+      }
 
     },
 
@@ -512,9 +585,26 @@ loadLayer(
 
             return L.marker(latlng,{
                 icon:MusholaIcon
-            });
+               });
 
-        }
+        },
+    
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "Mushola",
+
+                  [
+                    {name:"Nama ",label:"Nama"}                 ] 
+
+           ));
+
+      }
 
     },
 
@@ -534,9 +624,29 @@ loadLayer(
                 icon:SekolahIcon
             });
 
-        }
+        },
+    
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "Sekolah",
+
+                  [
+                    {name:"Nama ",label:"Nama"},
+                    {name:"GoogleMaps",label:"Google Maps"}
+                 ] 
+
+           ));
+
+      }
 
     },
+
 
     "Sekolah"
 
@@ -554,7 +664,29 @@ loadLayer(
                 icon:UMKMIcon
             });
 
-        }
+        },
+    
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "UMKM",
+
+                  [
+                    {name:"Nama ",label:"Nama"},
+                    {name:"Jenis",label:"Jenis"},
+                    {name:"Produk",label:"Produk"},
+                    {name:"Deskripsi",label:"Deskripsi"},
+                    {name:"GoogleMaps",label:"Google Maps"}
+                 ] 
+
+           ));
+
+      }
 
     },
 
@@ -574,10 +706,32 @@ loadLayer(
                 icon:DombaIcon
             });
 
-        }
+        },
+    
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "Peternakan Domba",
+
+                  [
+                    {name:"Nama",label:"Nama"},
+                    {name:"Jumlah",label:"Jumlah Ternak"},
+                    {name:"Sistem",label:"Sistem"},
+                    {name:"Pakan",label:"Pakan"},
+                    {name:"Vaksin",label:"Vaksin"},
+                    {name:"ObatCacing",label:"Obat Cacing"}
+                 ] 
+
+           ));
+
+      }
 
     },
-
     "Domba"
 
 );

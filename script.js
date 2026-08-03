@@ -153,6 +153,49 @@ const SekolahIcon = L.icon({
     popupAnchor: [0,-28]
 });
 
+/* POPUP */
+
+function createPopup(feature, title, fields){
+
+    const p = feature.properties;
+
+    let html = `<div class="popup-content">`;
+
+    if(p.Foto){
+
+        html += `
+        <img
+            src="${p.Foto}"
+            alt="${title}"
+            class="popup-image">
+        `;
+
+    }
+    
+    html += `<h3>${title}</h3>`;
+
+    html += `<table>`;
+
+    fields.forEach(field=>{
+
+        html += `
+        <tr>
+            <th>${field.label}</th>
+            <td>${p[field.name] ?? "-"}</td>
+        </tr>
+        `;
+
+    });
+
+    html += `</table>`;
+
+    html += `</div>`;
+
+    return html;
+
+}
+
+
 /*LOAD GEOJSON*/
 
 function loadLayer(url, options, layerName) {
@@ -444,10 +487,32 @@ loadLayer(
                 icon:KambingIcon
             });
 
-        }
+        },
+    
+        onEachFeature:function(feature,layer){
+
+          layer.bindPopup(
+
+              createPopup(
+  
+                  feature,
+
+                  "🐐 Peternakan Kambing",
+
+                  [
+                    {name:"Nama",label:"Nama"},
+                    {name:"Jumlah",label:"Jumlah Ternak"},
+                    {name:"Sistem",label:"Siatem"},
+                    {name:"Pakan",label:"Pakan"},
+                    {name:"Vaksin",label:"Vaksin"},
+                    {name:"ObatCacing",label:"Obat Cacing"}
+                 ] 
+
+           ));
+
+      }
 
     },
-
     "Kambing"
 
 );

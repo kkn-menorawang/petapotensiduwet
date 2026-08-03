@@ -288,7 +288,6 @@ function loadLayer(url, options, layerName, cluster = null) {
 
 }
 
-}
 
 loadLayer(
     "data/Batas_KabKota.geojson",
@@ -838,7 +837,8 @@ loadLayer(
       }
 
     },
-    "Kambing"
+    "Kambing",
+    clusterPotensi
 
 );
 

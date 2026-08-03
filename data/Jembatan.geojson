@@ -3,6 +3,6 @@
 "name": "Jembatan",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
-{ "type": "Feature", "properties": { "Nama": "Jembatan Duwet", "Deskripsi": "Jembatan Gantung Duwet merupakan jembatan gantung yang menghubungkan Kalurahan Banjarharjo, Kecamatan Kalibawang, Kabupaten Kulon Progo dengan wilayah Kalurahan Bligo, Kecamatan Ngluwar, Kabupaten Magelang", "Foto": "assets/images/Jembatan_Duwet.jpg" }, "geometry": { "type": "Point", "coordinates": [ 110.267275939357063, -7.694869898702488 ] } }
+{ "type": "Feature", "properties": { "Nama": "Jembatan Gantung Duwet", "Deskripsi": "Jembatan Gantung Duwet merupakan jembatan gantung yang menghubungkan Kalurahan Banjarharjo, Kecamatan Kalibawang, Kabupaten Kulon Progo dengan wilayah Kalurahan Bligo, Kecamatan Ngluwar, Kabupaten Magelang", "Foto": "assets/images/Jembatan_Duwet.jpg" }, "geometry": { "type": "Point", "coordinates": [ 110.267275939357063, -7.694869898702488 ] } }
 ]
 }

@@ -270,7 +270,7 @@ loadLayer(
 );
 
 loadLayer(
-    "data/Batas_kecamatan.geojson",
+    "data/Batas_Kecamatan.geojson",
     {
         pane: "BatasKecamatan",
 
@@ -779,7 +779,7 @@ loadLayer(
 );
 
 
-fetch("data/batas_padukuhan.geojson")
+fetch("data/Batas_Padukuhan.geojson")
 .then(r=>r.json())
 .then(data=>{
 

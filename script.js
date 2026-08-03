@@ -60,88 +60,65 @@ const legend = L.control({
     position: "bottomleft"
 });
 
-legend.onAdd = function(map){
+legend.onAdd = function (map) {
 
-    const div = L.DomUtil.create("div","legend");
+    const div = L.DomUtil.create("div", "legend collapsed");
 
     div.innerHTML = `
-    <h4>Legenda</h4>
 
-    <div class="legend-group">
+    <div class="legend-title">
+        📖 Legenda
+    </div>
+
+    <div class="legend-content">
+
         <b>Potensi</b>
 
         <div><img src="assets/icons/Kambing.png"> Peternakan Kambing</div>
-
         <div><img src="assets/icons/Domba.png"> Peternakan Domba</div>
-
         <div><img src="assets/icons/Lele.png"> Budidaya Lele</div>
-
         <div><img src="assets/icons/Cacing_Sutra.png"> Budidaya Cacing Sutra</div>
-
         <div><img src="assets/icons/UMKM.png"> UMKM</div>
-    </div>
 
-    <hr>
-
-    <div class="legend-group">
+        <hr>
 
         <b>Fasilitas</b>
 
         <div><img src="assets/icons/Sekolah.png"> Sekolah</div>
-
         <div><img src="assets/icons/Mushola.png"> Mushola</div>
-
         <div><img src="assets/icons/Padukuhan.png"> Rumah Kepala Dukuh</div>
 
-    </div>
-
-    <hr>
-
-    <div class="legend-group">
+        <hr>
 
         <b>Landmark</b>
 
         <div><img src="assets/icons/Jembatan.png"> Jembatan</div>
-
         <div><img src="assets/icons/Air_Terjun.png"> Air Terjun</div>
 
-    </div>
-
-    <hr>
-
-    <div class="legend-group">
+        <hr>
 
         <b>Batas Administrasi</b>
 
-        <div>
-            <span class="line kab"></span>
-            Kabupaten/Kota
-        </div>
-
-        <div>
-            <span class="line kec"></span>
-            Kecamatan
-        </div>
-
-        <div>
-            <span class="line kel"></span>
-            Kelurahan
-        </div>
-
-        <div>
-            <span class="line pad"></span>
-            Padukuhan
-        </div>
+        <div><span class="line kab"></span> Kabupaten/Kota</div>
+        <div><span class="line kec"></span> Kecamatan</div>
+        <div><span class="line kel"></span> Kelurahan</div>
+        <div><span class="line pad"></span> Padukuhan</div>
 
     </div>
+
     `;
+
+    div.onclick = function(){
+
+        div.classList.toggle("collapsed");
+
+    };
 
     return div;
 
 };
 
 legend.addTo(map);
-
 
 /* MARKER CLUSTER */
 

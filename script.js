@@ -43,18 +43,14 @@ const baseMaps = {
     "OpenStreetMap": osm
 };
 
-const groupedOverlays = {};
+const overlayMaps = {};
 
-const layerControl = L.control.groupedLayers(
-
+const layerControl = L.control.layers(
     baseMaps,
-
-    groupedOverlays,
-
+    overlayMaps,
     {
-        collapsed:true
+        collapsed:false
     }
-
 ).addTo(map);
 
 
@@ -315,7 +311,7 @@ function createPopup(feature, title, fields){
 
 /*LOAD GEOJSON*/
 
-function loadLayer(url, options, layerName, cluster = null,  groupName = "Lainnya") {
+function loadLayer(url, options, layerName, cluster = null) {
 
     fetch(url)
         .then(response => {
@@ -395,9 +391,7 @@ loadLayer(
     },
     "Batas Kab Kota",
     
-    null,
-
-    "Batas Administrasi"
+    null
 
 );
 
@@ -438,9 +432,7 @@ loadLayer(
     },
     "Batas Kecamatan",
     
-    null,
-
-    "Batas Administrasi"
+    null
 
 );
 
@@ -481,9 +473,7 @@ loadLayer(
     },
     "Batas Kelurahan",
     
-    null,
-
-    "Batas Administrasi"
+    null
 
 );
 
@@ -525,9 +515,7 @@ loadLayer(
     },
     "Batas Padukuhan",
     
-    null,
-
-    "Batas Administrasi"
+    null
 
 );
 
@@ -567,9 +555,7 @@ loadLayer(
     },
     "Air Terjun",  
     
-    clusterLandmark,
-
-    "Landmark"
+    clusterLandmark
 
 );
 
@@ -609,9 +595,7 @@ loadLayer(
     },
     "Jembatan",
     
-    clusterLandmark,
-
-    "Landmark"
+    clusterLandmark
 
 );
 
@@ -650,9 +634,7 @@ loadLayer(
     },
     "Budidaya Cacing Sutra",
     
-    clusterPotensi,
-
-    "Potensi"
+    clusterPotensi
 
 );
 
@@ -691,9 +673,7 @@ loadLayer(
     },
     "Budidaya Lele",
     
-    clusterPotensi,
-
-    "Potensi"
+    clusterPotensi
 
 );
 
@@ -773,9 +753,7 @@ loadLayer(
 
     "Mushola",
     
-    clusterFasilitas,
-
-    "Fasilitas"
+    clusterFasilitas
 
 );
 
@@ -816,9 +794,7 @@ loadLayer(
 
     "Sekolah",
     
-    clusterFasilitas,
-
-    "Fasilitas"
+    clusterFasilitas
 
 );
 
@@ -861,9 +837,7 @@ loadLayer(
 
     "UMKM",
     
-    clusterPotensi,
-
-    "Potensi"
+    clusterPotensi
 
 );
 
@@ -907,9 +881,7 @@ loadLayer(
     },
     "Domba",
     
-    clusterPotensi,
-
-    "Potensi"
+    clusterPotensi
 
 );
 
@@ -935,7 +907,7 @@ loadLayer(
   
                   feature,
 
-                  "🐐 Peternakan Kambing",
+                  "Peternakan Kambing",
 
                   [
                     {name:"Nama",label:"Nama"},
@@ -953,9 +925,7 @@ loadLayer(
     },
     "Kambing",
     
-    clusterPotensi,
-
-    "Potensi"
+    clusterPotensi
 
 );
 

@@ -363,3 +363,94 @@ body{
     transform:translateY(-1px);
 
 }
+
+/*LEGEND*/
+
+.legend{
+
+    background:white;
+    padding:14px;
+
+    border-radius:10px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.25);
+
+    font-size:13px;
+
+    line-height:1.6;
+
+    max-width:230px;
+
+}
+
+.legend h4{
+
+    margin-bottom:10px;
+
+    color:#1b5e20;
+
+}
+
+.legend-group{
+
+    margin-bottom:8px;
+
+}
+
+.legend img{
+
+    width:18px;
+
+    height:18px;
+
+    margin-right:8px;
+
+    vertical-align:middle;
+
+}
+
+.legend hr{
+
+    margin:8px 0;
+
+    border:none;
+
+    border-top:1px solid #ddd;
+
+}
+
+.line{
+
+    display:inline-block;
+
+    width:35px;
+
+    margin-right:8px;
+
+    vertical-align:middle;
+
+}
+
+.kab{
+
+    border-top:2px dashed #616161;
+
+}
+
+.kec{
+
+    border-top:2px dashed #757575;
+
+}
+
+.kel{
+
+    border-top:2px dashed #FB8C00;
+
+}
+
+.pad{
+
+    border-top:3px solid #FB8C00;
+
+}

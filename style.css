@@ -323,3 +323,67 @@ body{
     color:#444;
 
 }
+
+/* Tombol Google Maps */
+
+.popup-button{
+
+    display:block;
+
+    width:100%;
+
+    margin-top:12px;
+
+    padding:10px;
+
+    background:#2E7D32;
+
+    color:white;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    transition:.2s;
+
+}
+
+.popup-button:hover{
+
+    background:#1B5E20;
+
+}
+
+.popup-button{
+
+display:block;
+
+margin-top:12px;
+
+padding:10px;
+
+background:#2E7D32;
+
+color:white;
+
+text-align:center;
+
+text-decoration:none;
+
+border-radius:8px;
+
+font-weight:600;
+
+transition:.25s;
+
+}
+
+.popup-button:hover{
+
+background:#1B5E20;
+
+}

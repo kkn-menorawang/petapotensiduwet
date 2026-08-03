@@ -40,7 +40,9 @@ L.control.scale({
 /*  LAYER CONTROL*/
 
 const baseMaps = {
-    "OpenStreetMap": osm
+    "OpenStreetMap": osm,
+    "Satellite": satellite,
+    "Carto Light": carto
 };
 
 const overlayMaps = {};
@@ -49,7 +51,7 @@ const layerControl = L.control.layers(
     baseMaps,
     overlayMaps,
     {
-        collapsed:false
+        collapsed:true
     }
 ).addTo(map);
 
